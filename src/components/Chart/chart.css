@@ -1,0 +1,9 @@
+.tooltip-custom {
+    box-shadow: none !important;
+    border-radius: 5px;
+    padding: 5px 10px !important;
+}
+
+.chart-container {
+    margin-top: 20px;
+}

@@ -1,0 +1,19 @@
+.chart-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.chart-options {
+    display: flex;
+}
+
+.range {
+    font-size: 1rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.range.unselected {
+    color: #6F7177;
+}

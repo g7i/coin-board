@@ -1,0 +1,28 @@
+header {
+    font-weight: normal;
+    font-size: 70px;
+    color: #1A243A;
+    display: flex;
+    align-items: flex-start;
+}
+
+header .currency {
+    font-size: 24px;
+    color: #BDBEBF;
+    margin-top: 22px;
+    margin-left: 5px;
+}
+
+.change {
+    font-size: 18px;
+    color: #67BF6B;
+    margin: 10px 0;
+}
+
+.change.positive {
+    color: #67BF6B;
+}
+
+.change.negative {
+    color: red;
+}

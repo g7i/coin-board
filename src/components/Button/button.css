@@ -1,0 +1,21 @@
+.btn-container {
+    width: fit-content;
+    padding: 6px 8px;
+    border-radius: 6px;
+    color: #6F7177;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    transition: all ease-out 100ms;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.btn-container:hover {
+    background-color: #6F717710;
+    color: black;
+}
+
+.label {
+    margin-left: 8px;
+}
