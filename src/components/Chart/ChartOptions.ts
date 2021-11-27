@@ -53,7 +53,7 @@ function getOptions(data: [number, number][]) {
         },
         areaStyle: {
           color: new graphic.LinearGradient(0.5, 0, 0.5, 1, [
-            { offset: 0, color: '#E8E7FF' },
+            { offset: 0.6, color: '#E8E7FF' },
             { offset: 1, color: 'rgba(255, 255, 255, 0)' }
           ])
         },
