@@ -7,10 +7,11 @@ import {CHART_WIDTH} from "../../constants/Others";
 import ChartActions from "../ChartActions";
 import './chart.css';
 import { Spin } from "antd";
+import {useStore} from "../../store";
 
-async function getChartData(days: string) {
+async function getChartData(days: string, coin: string, currency: string) {
   try {
-    const { data } = await axios.get(`${BaseURL}bitcoin/market_chart?vs_currency=usd&days=${days}`);
+    const { data } = await axios.get(`${BaseURL}${coin}/market_chart?vs_currency=${currency}&days=${days}`);
     return data;
   } catch (e) {
     console.error(e);
@@ -19,6 +20,7 @@ async function getChartData(days: string) {
 }
 
 export default function Chart() {
+  const [{ coinID, currency }] = useStore();
   const [selectedRange, setSelectedRange] = useState("1");
   const [data, setData] = useState<[number, number][]>([[0, 0]]);
   const [loading, setLoading] = useState(true);
@@ -26,12 +28,12 @@ export default function Chart() {
   useEffect(() => {
     const getData = async () => {
       setLoading(true);
-      const data = (await getChartData(selectedRange)).prices;
-      setData(data.map(item => [item[0], item[1]]));
+      const data = await getChartData(selectedRange, coinID, currency);
+      setData(data.prices.map(item => [item[0], item[1]]));
       setLoading(false);
     };
     getData();
-  }, [selectedRange]);
+  }, [selectedRange, currency, coinID]);
 
   return (
     <Spin spinning={loading} style={spinStyle}>
